@@ -38,30 +38,13 @@ impl Inventory {
 }
 
 fn main() {
-    let eg = |x| x;
-    let s = eg(String::from("hello"));
-    let n = eg(5);
+    let list = vec![1, 2, 3];
+    println!("Before defining closure: {:?}", list);
 
-    let store = Inventory {
-        shirts: vec![
-            ShirtColor::Blue,
-            ShirtColor::Red,
-            ShirtColor::Blue,
-        ],
-    };
+    let only_borrows = || println!("From closure: {:?}", list);
 
-    let user_pref1 = Some(ShirtColor::Red);
-    let giveaway1 = store.giveaway(user_pref1);
-    println!(
-        "The user with preference {:?} gets {:?}",
-        user_pref1, giveaway1
-    );
+    println!("Before calling closure: {:?}", list);
 
-    let user_pref2 = None;
-    let giveaway2 = store.giveaway(user_pref2);
-    println!(
-        "The user with preference {:?} gets {:?}",
-        user_pref2, giveaway2
-    )
-
+    only_borrows();
+    println!("After calling closure: {:?}", list);
 }
