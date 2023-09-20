@@ -38,13 +38,14 @@ impl Inventory {
 }
 
 fn main() {
-    let list = vec![1, 2, 3];
+    let mut list = vec![1, 2, 3];
     println!("Before defining closure: {:?}", list);
 
-    let only_borrows = || println!("From closure: {:?}", list);
+    let mut borrows_mut = || list.push(7);
 
-    println!("Before calling closure: {:?}", list);
+    // Uncomment and compile error!
+    // println!("Before calling closure: {:?}", list);
 
-    only_borrows();
+    borrows_mut();
     println!("After calling closure: {:?}", list);
 }
