@@ -38,11 +38,9 @@ impl Inventory {
 }
 
 fn main() {
-    let expensive_closure = |num: u32| -> u32 {
-        println!("calculating slowly...");
-        thread::sleep(Duration::from_secs(2));
-        num
-    };
+    let eg = |x| x;
+    let s = eg(String::from("hello"));
+    let n = eg(5);
 
     let store = Inventory {
         shirts: vec![
