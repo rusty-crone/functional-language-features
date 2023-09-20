@@ -1,8 +1,10 @@
-#[derive(Debug)]
-struct Rectangle {
-    width: u32,
-    height: u32,
-}
+// pub trait Iterator {
+//     type Item;
+//
+//     fn next(&mut self) -> Option<Self::Item>;
+//
+//     // methods with default implementations elided
+// }
 
 fn main() {
     let v1 = vec![1, 2, 3];
